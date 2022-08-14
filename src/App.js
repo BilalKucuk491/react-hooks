@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useEffect } from "react";
+// import {PostService,UserService} from "./services"
+
+import { useRoutes,generatePath } from "react-router-dom";
+import routes from "./routes";
+import { url } from "./utils";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // useEffect(()=>{
+  //   PostService.getPosts().then(res=>console.log(res))
+  //   PostService.getPostDetails(2).then(res=>console.log(res))
+  //   PostService.newPost({
+  //     userId:3,
+  //     title:"test",
+  //     body:"test"
+  //   }).then(res=>console.log(res))
+
+  //   UserService.getUsers()
+  // })
+
+  // console.log(generatePath("post/:id/:url",{
+  //   id:2,
+  //   url:"test-url"
+  // }));
+
+
+  return useRoutes(routes)
 }
 
 export default App;
